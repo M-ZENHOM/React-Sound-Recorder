@@ -7,6 +7,28 @@
     "types": "dist/esm/index.d.ts",
     "repository": "https://github.com/M-ZENHOM/React-Sound-Recorder",
     "homepage": "https://github.com/M-ZENHOM/React-Sound-Recorder",
+    "keywords": [
+    "react",
+    "reactjs",
+    "nextjs",
+    "audio",
+    "voice",
+    "audio recording",
+    "audio recorder",
+    "voice recording",
+    "voice recorder",
+    "recorder",
+    "recording",
+    "getUserMedia",
+    "mediaDevices",
+    "ffmpeg",
+    "download audio",
+    "download",
+    "mp3",
+    "webm",
+    "wav",
+    "mpeg"
+  ],
     "files": [
         "dist"
     ],
