@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import useTimer from '../hooks/useTimer';
+import { useTimer } from '../hooks/useTimer';
 
 type RecordingStatus = 'inactive' | 'paused' | 'recording';
 
@@ -14,7 +14,7 @@ interface AudioRecorderProps {
     customControls?: (actions: Record<string, () => void>, time: string, recordingStatus: RecordingStatus) => JSX.Element;
 }
 
-const AudioRecorder: React.FC<AudioRecorderProps> = ({ timeLimit, onRecordingComplete, customControls }) => {
+export const AudioRecorder: React.FC<AudioRecorderProps> = ({ timeLimit, onRecordingComplete, customControls }) => {
     const [state, setState] = useState<AudioRecorderState>({
         permission: false,
         recordingStatus: 'inactive',
@@ -142,5 +142,3 @@ const AudioRecorder: React.FC<AudioRecorderProps> = ({ timeLimit, onRecordingCom
 
     return <>{customControls ? customControls({ startRecording, stopRecording, pauseRecording }, time, state.recordingStatus) : renderDefaultControls()}</>;
 };
-
-export default AudioRecorder;

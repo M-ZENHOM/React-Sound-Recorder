@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react';
 
-const useTimer = () => {
+export const useTimer = () => {
     const [time, setTime] = useState('00:00');
     const [isRunning, setIsRunning] = useState(false);
     const intervalRef = useRef<number | NodeJS.Timeout | null>(null);
@@ -53,5 +53,3 @@ const useTimer = () => {
 
     return { time, start, pause, resume, reset, getElapsedTime };
 };
-
-export default useTimer;
