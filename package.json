@@ -5,8 +5,8 @@
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/index.d.ts",
-    "repository": "https://github.com/M-ZENHOM/React-Audio-Recorder",
-    "homepage": "https://github.com/M-ZENHOM/React-Audio-Recorder",
+    "repository": "https://github.com/M-ZENHOM/React-Sound-Recorder",
+    "homepage": "https://github.com/M-ZENHOM/React-Sound-Recorder",
     "files": [
         "dist"
     ],
