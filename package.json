@@ -1,0 +1,32 @@
+{
+    "name": "react-voice-recorder",
+    "version": "1.0.0",
+    "description": "a simple react audio recorder with some custom things",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/esm/index.d.ts",
+    "repository": "https://github.com/M-ZENHOM/React-Audio-Recorder",
+    "homepage": "https://github.com/M-ZENHOM/React-Audio-Recorder",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+    },
+    "author": "ZENHOM",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^20.14.11",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "typescript": "^5.5.3"
+    },
+    "peerDependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
+}
