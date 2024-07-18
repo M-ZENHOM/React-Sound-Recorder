@@ -41,7 +41,7 @@ return <AudioRecorder onRecordingComplete={(blob, title) => getAudio(blob, title
 | Props                     | Description                                                                             | Default   | Optional |
 | :------------------------ | :-------------------------------------------------------------------------------------- | :-------- | :------- |
 | **`onRecordingComplete`** | A method that gets called when "Save recording" option is pressed                       | N/A       | Yes      |
-| **`timeLimit`**           | A Parameter to set the time limit for the audio recorder                                | Unlimited | Yes      |
+| **`timeLimit`**           | A Parameter to set the time limit for the audio recorder - "in Seconds"                 | Unlimited | Yes      |
 | **`customControls`**      | This Parameter allows you to create your own custom controls with your preferred style. | N/A       | Yes      |
 
 ---
