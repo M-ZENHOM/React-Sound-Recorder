@@ -43,7 +43,7 @@ return <AudioRecorder onRecordingComplete={(blob, title) => getAudio(blob, title
 ```js
 export function App() {
   const [audioUrl, setAudioUrl] = useState<{ url: string; title: string }>();
-  const addAudioElement = (blob: Blob, title?: string) => {
+  const getAudio = (blob: Blob, title?: string) => {
     const url = URL.createObjectURL(blob);
     setAudioUrl({
       url,
@@ -55,7 +55,7 @@ export function App() {
     <>
       <AudioRecorder
         timeLimit={5}
-        onRecordingComplete={(blob, title) => addAudioElement(blob, title)}
+        onRecordingComplete={(blob, title) => getAudio(blob, title)}
       />
       {audioUrl && <audio src={audioUrl.url} title={audioUrl.title} controls />}
     </>
