@@ -63,12 +63,12 @@ export function App() {
 }
 ```
 
-| Props                     | Description                                                                             | Default   | Optional |
-| :------------------------ | :-------------------------------------------------------------------------------------- | :-------- | :------- |
-| **`onRecordingComplete`** | A method that gets called when "Save recording" option is pressed                       | N/A       | Yes      |
-| **`timeLimit`**           | A Parameter to set the time limit for the audio recorder - "in Seconds"                 | Unlimited | Yes      |
-| **`customControls`**      | This Parameter allows you to create your own custom controls with your preferred style. | N/A       | Yes      |
-| **`askForTitle`**         | This Parameter ask for audio title to set it for audio name `[audioTitle.mp3]`          | false     | Yes      |
+| Props                     | Description                                                                                            | Default   | Optional |
+| :------------------------ | :----------------------------------------------------------------------------------------------------- | :-------- | :------- |
+| **`onRecordingComplete`** | A method that gets called when u need to save audio details to local state or displaying it to the dom | N/A       | Yes      |
+| **`timeLimit`**           | A Parameter to set the time limit for the audio recorder - "in Seconds"                                | Unlimited | Yes      |
+| **`customControls`**      | This Parameter allows you to create your own custom controls with your preferred style.                | N/A       | Yes      |
+| **`askForTitle`**         | This Parameter ask for audio title to set it for audio name `[audioTitle.mp3]`                         | false     | Yes      |
 
 ---
 
