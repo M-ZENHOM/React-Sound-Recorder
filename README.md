@@ -38,11 +38,37 @@ const getAudio = (blob: Blob, title: string | undefined) => {
 return <AudioRecorder onRecordingComplete={(blob, title) => getAudio(blob, title)} />;
 ```
 
+## Usage 2
+
+```js
+export function App() {
+  const [audioUrl, setAudioUrl] = useState<{ url: string; title: string }>();
+  const addAudioElement = (blob: Blob, title?: string) => {
+    const url = URL.createObjectURL(blob);
+    setAudioUrl({
+      url,
+      title: title!,
+    });
+  };
+
+  return (
+    <>
+      <AudioRecorder
+        timeLimit={5}
+        onRecordingComplete={(blob, title) => addAudioElement(blob, title)}
+      />
+      {audioUrl && <audio src={audioUrl.url} title={audioUrl.title} controls />}
+    </>
+  );
+}
+```
+
 | Props                     | Description                                                                             | Default   | Optional |
 | :------------------------ | :-------------------------------------------------------------------------------------- | :-------- | :------- |
 | **`onRecordingComplete`** | A method that gets called when "Save recording" option is pressed                       | N/A       | Yes      |
 | **`timeLimit`**           | A Parameter to set the time limit for the audio recorder - "in Seconds"                 | Unlimited | Yes      |
 | **`customControls`**      | This Parameter allows you to create your own custom controls with your preferred style. | N/A       | Yes      |
+| **`askForTitle`**         | This Parameter ask for audio title to set it for audio name `[audioTitle.mp3]`          | false     | Yes      |
 
 ---
 
