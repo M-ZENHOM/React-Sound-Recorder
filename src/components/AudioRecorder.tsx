@@ -12,9 +12,10 @@ interface AudioRecorderProps {
     timeLimit?: number;
     onRecordingComplete?: (blob: Blob, title?: string) => void;
     customControls?: (actions: Record<string, () => void>, time: string, recordingStatus: RecordingStatus) => JSX.Element;
+    askForTitle?: boolean;
 }
 
-export const AudioRecorder: React.FC<AudioRecorderProps> = ({ timeLimit, onRecordingComplete, customControls }) => {
+export const AudioRecorder: React.FC<AudioRecorderProps> = ({ timeLimit, onRecordingComplete, customControls, askForTitle }) => {
     const [state, setState] = useState<AudioRecorderState>({
         permission: false,
         recordingStatus: 'inactive',
@@ -98,7 +99,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({ timeLimit, onRecor
             reset();
             stopTimer();
             const audioBlob = new Blob(chunksRef.current, { type: 'audio/mpeg' });
-            const audioTitle = prompt('Enter a title for your audio:');
+            const audioTitle = askForTitle ? prompt('Enter a title for your audio:') : 'record';
             onRecordingComplete?.(audioBlob, audioTitle || undefined);
             chunksRef.current = [];
         };
