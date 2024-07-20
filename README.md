@@ -19,7 +19,7 @@ yarn add react-sound-recorder
 
 ## Usage
 
-### **AudioRecorder** Component ([See it in action](soon))
+### **AudioRecorder** Component ([See it in action](https://stackblitz.com/edit/react-sound-recorder?file=src%2FApp.tsx))
 
 You can use an out-of-the-box component that takes `onRecordingComplete` method as a prop and calls it when you save the recording
 
