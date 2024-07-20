@@ -1,6 +1,6 @@
 {
     "name": "react-sound-recorder",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "a simple react audio recorder with some custom things",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
