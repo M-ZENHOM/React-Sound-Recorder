@@ -43,6 +43,7 @@ return <AudioRecorder onRecordingComplete={(blob, title) => getAudio(blob, title
 ```js
 export function App() {
   const [audioUrl, setAudioUrl] = useState<{ url: string; title: string }>();
+
   const getAudio = (blob: Blob, title?: string) => {
     const url = URL.createObjectURL(blob);
     setAudioUrl({
@@ -51,11 +52,17 @@ export function App() {
     });
   };
 
+  const handleError = (error) => {
+  console.error("AudioRecorder error:", error);
+  // Display error to user or take other actions
+};
+
   return (
     <>
       <AudioRecorder
         timeLimit={5}
         onRecordingComplete={(blob, title) => getAudio(blob, title)}
+         onError={handleError}
       />
       {audioUrl && <audio src={audioUrl.url} title={audioUrl.title} controls />}
     </>
@@ -66,6 +73,7 @@ export function App() {
 | Props                     | Description                                                                                            | Default   | Optional |
 | :------------------------ | :----------------------------------------------------------------------------------------------------- | :-------- | :------- |
 | **`onRecordingComplete`** | A method that gets called when u need to save audio details to local state or displaying it to the dom | N/A       | Yes      |
+| **`onError`**             | A Callback function for handling recording errors                                                      | N/A       | Yes      |
 | **`timeLimit`**           | A Parameter to set the time limit for the audio recorder - "in Seconds"                                | Unlimited | Yes      |
 | **`customControls`**      | This Parameter allows you to create your own custom controls with your preferred style.                | N/A       | Yes      |
 | **`askForTitle`**         | This Parameter ask for audio title to set it for audio name `[audioTitle.mp3]`                         | false     | Yes      |
