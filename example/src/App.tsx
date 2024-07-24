@@ -10,6 +10,9 @@ function App() {
             title: title!
         });
     };
+    const handleError = (error: string) => {
+        console.error('AudioRecorder error:', error);
+    };
 
     return (
         <>
@@ -18,9 +21,11 @@ function App() {
                 onRecordingComplete={(blob, title) => getAudio(blob, title)}
                 askForTitle
                 timeLimit={10}
-                customControls={(actions, time, status) => (
+                onError={handleError}
+                customControls={(actions, time, status, error) => (
                     <div>
                         <h2>{time}</h2>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
                         <button disabled={status === 'inactive'} onClick={actions.pauseRecording}>
                             Pause
                         </button>
