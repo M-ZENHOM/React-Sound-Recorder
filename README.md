@@ -62,7 +62,7 @@ export function App() {
       <AudioRecorder
         timeLimit={5}
         onRecordingComplete={(blob, title) => getAudio(blob, title)}
-         onError={handleError}
+        onError={handleError}
       />
       {audioUrl && <audio src={audioUrl.url} title={audioUrl.title} controls />}
     </>
